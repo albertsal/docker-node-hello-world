@@ -2,25 +2,19 @@
 pipeline {
   agent none
   stages {
-    stage('Docker stop') {
-      agent any
-      steps {
-         try {
-            sh 'docker stop hello'
-            sh 'docker rm hello'
-         } catch (Exception e) {
-         }
-      }
-    }
-    stage('Docker delete') {
-      agent any
-      steps {
-          try {
-        sh 'docker rmi hello-world'
-           } catch (Exception e) {
-         }
-      }
-    }
+    // stage('Docker stop') {
+    //   agent any
+    //   steps {
+    //     sh 'docker stop hello'
+    //     sh 'docker rm hello'
+    //   }
+    // }
+    // stage('Docker delete') {
+    //   agent any
+    //   steps {
+    //     sh 'docker rmi hello-world'
+    //   }
+    // }
     stage('Docker Build') {
       agent any
       steps {
