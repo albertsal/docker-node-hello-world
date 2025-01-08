@@ -21,7 +21,7 @@ pipeline {
         sh 'docker build -t hello-world .'
       }
     }    
-    stage('Docker Build') {
+    stage('Docker run') {
       agent any
       steps {
         sh 'docker run -d --name hello -p 4001:4000 hello-world'
