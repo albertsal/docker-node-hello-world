@@ -6,6 +6,13 @@ pipeline {
       agent any
       steps {
         sh 'docker stop hello'
+        sh 'docker rm hello'
+      }
+    }
+    stage('Docker delete') {
+      agent any
+      steps {
+        sh 'docker rmi hello-world'
       }
     }
     stage('Docker Build') {
