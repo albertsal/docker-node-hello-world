@@ -2,14 +2,14 @@
 pipeline {
   agent none
   stages {
-    stage('Docker stop') {
+    stage('Docker stop container') {
       agent any
       steps {
         sh 'docker stop hello'
         sh 'docker rm hello'
       }
     }
-    stage('Docker delete') {
+    stage('Docker delete image') {
       agent any
       steps {
         sh 'docker rmi hello-world'
